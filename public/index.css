@@ -1,12 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+}
+
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   margin: 0;
-  background: #111;
+  background: #101010;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .fa-magnifying-glass {
@@ -21,7 +35,6 @@ body {
 .header-center {
   align-items: center;
   flex-direction: column;
-  margin-top: 10%;
 }
 
 .left-margin {
@@ -60,8 +73,8 @@ body {
 }
 
 .logo {
-  width: 150px;
-  height: 150px;
+  max-width: 100%;
+  height: auto;
 }
 
 .logo-wrapper .text {
@@ -69,22 +82,45 @@ body {
   color: #fff;
 }
 
+.logo-link {
+  display: flex;
+  justify-content: center;
+}
+
 .logo-wrapper h1 {
   color: white;
+  margin-bottom: 1.2em;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .logo-wrapper h1 {
+    font-size: 1.6em;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
 }
 
 footer {
-  margin: 0 5vw;
-  margin-top: auto;
+  margin: 0 30px;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   line-height: 30px;
   margin-bottom: 20px;
+  flex-grow: 0;
 }
 
 footer > div {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 15px;
@@ -92,22 +128,27 @@ footer > div {
 
 footer a,
 footer span {
-  margin: 0 15px;
   text-decoration: none;
-  color: #fff;
-  font-size: 15px;
+  color: #b1b1b1;
+  font-size: 12px;
 }
 
 footer a {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 footer a:hover {
   text-decoration: underline;
 }
 
+.desc {
+  width: 100%;
+  text-align: center;
+}
+
 .desc p {
-  width: 560px;
+  max-width: 560px;
   color: rgba(253, 253, 253, 0.514);
 }
 
@@ -120,7 +161,7 @@ footer a:hover {
   color: var(--text-color);
   border-radius: 3px;
   outline: none;
-  width: 350px;
+  width: 100%;
   margin-top: 5px;
   border-radius: 50px;
   color: #fff;
@@ -171,4 +212,23 @@ footer a:hover {
 
 .credit input:checked ~ pre {
   display: block;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.form__label span {
+  color: white;
+  font-size: 12px;
 }
