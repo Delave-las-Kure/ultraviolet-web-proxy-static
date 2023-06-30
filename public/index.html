@@ -33,10 +33,7 @@
   <body>
     <main>
       <div class="inner">
-        <div
-          title="Vpntester Logo"
-          class="logo-wrapper header-center"
-        >
+        <div title="Vpntester Logo" class="logo-wrapper header-center">
           <a href="https://vpntester.org/" target="_blank" class="logo-link">
             <img
               class="logo"
@@ -52,6 +49,11 @@
         <form id="uv-form" class="form">
           <label for="uv-search-engine" class="form__label">
             <span>Input your URL here:</span>
+            <input
+              id="uv-search-engine"
+              value="https://www.google.com/search?q=%s"
+              type="hidden"
+            />
             <input
               id="uv-address"
               type="text"
