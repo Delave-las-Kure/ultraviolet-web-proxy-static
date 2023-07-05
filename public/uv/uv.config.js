@@ -9,5 +9,6 @@ self.__uv$config = {
   client: "/uv/uv.client.js",
   bundle: "/uv/uv.bundle.js",
   config: "/uv/uv.config.js",
+  toolbar: "/toolbar/assets/index.js",
   sw: "/uv/uv.sw.js",
 };
