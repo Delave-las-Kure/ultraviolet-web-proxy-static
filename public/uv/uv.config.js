@@ -1,5 +1,4 @@
 // This file overwrites the stock UV config.js
-console.log(window)
 self.__uv$config = {
   prefix: "/uv/service/",
   bare: "/bare/",
