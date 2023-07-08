@@ -13,5 +13,5 @@ self.__uv$config = {
     style: "/toolbar/assets/index.css",
   },
   sw: "/uv/uv.sw.js",
-  env: {/*env*/}
+  /*env*/
 };
