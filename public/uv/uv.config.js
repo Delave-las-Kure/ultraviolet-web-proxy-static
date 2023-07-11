@@ -14,4 +14,5 @@ self.__uv$config = {
   },
   sw: "/uv/uv.sw.js",
   /*env*/
+  /*metrics*/
 };
