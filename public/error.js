@@ -23,9 +23,16 @@ async function init() {
     } catch (error) {
       error.textContent = "Error: The service worker is not registered.";
       registerButton.classList.add("show");
-      document.body.classList.remove("nonvisible");
+      showErrorPage()
     }
-  else document.body.classList.remove("nonvisible");
+  else {
+    showError()
+  }
+}
+
+function showErrorPage() {
+  document.body.classList.remove("nonvisible");
+  document.title = '404 Error'
 }
 
 init()
