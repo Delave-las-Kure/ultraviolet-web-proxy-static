@@ -232,3 +232,7 @@ footer a:hover {
   color: white;
   font-size: 12px;
 }
+
+.nonvisible > * {
+  visibility: hidden;
+}
