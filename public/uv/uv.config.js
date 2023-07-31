@@ -16,3 +16,45 @@ self.__uv$config = {
   /*env*/
   /*metrics*/
 };
+
+if (navigator) {
+
+  (async function () {
+    let refreshing = false;
+
+    const swr = navigator.serviceWorker
+    // detect controller change and refresh the page
+    swr && swr.addEventListener('controllerchange', () => {
+      if (!refreshing) {
+        window.location.reload()
+        refreshing = true
+      }
+    })
+
+    const registration = await navigator.serviceWorker.getRegistration();
+    // (it is also returned from navigator.serviceWorker.register() function)
+    registration.active
+
+    if (registration) { // if there is a SW active
+      registration.addEventListener('updatefound', () => {
+        if (registration.installing) {
+          // wait until the new Service worker is actually installed (ready to take over)
+          registration.installing.addEventListener('statechange', () => {
+            if (registration.waiting) {
+              // if there's an existing controller (previous Service Worker)
+              if (swr) {
+                registration.waiting.postMessage('SKIP_WAITING')
+              } else {
+                // otherwise it's the first install, nothing to do
+                console.log('Service Worker initialized for the first time')
+              }
+            }
+          })
+        }
+      })
+    }
+
+  })()
+  // get the ServiceWorkerRegistration instance
+
+}
