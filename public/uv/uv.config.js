@@ -8,10 +8,6 @@ self.__uv$config = {
   client: "/uv/uv.client.js",
   bundle: "/uv/uv.bundle.js",
   config: "/uv/uv.config.js",
-  toolbar: {
-    script: "/toolbar/assets/index.js",
-    style: "/toolbar/assets/index.css",
-  },
   sw: "/uv/uv.sw.js",
   /*env*/
   /*metrics*/
