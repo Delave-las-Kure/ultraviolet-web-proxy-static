@@ -1,6 +1,7 @@
 // This file overwrites the stock UV config.js
 self.__uv$config = {
   prefix: "/uv/service/",
+  mainPrefix: "/main/",
   bare: "/bare/",
   encodeUrl: Ultraviolet.codec.xor.encode,
   decodeUrl: Ultraviolet.codec.xor.decode,
@@ -29,7 +30,6 @@ if (navigator) {
 
     const registration = await navigator.serviceWorker.getRegistration();
     // (it is also returned from navigator.serviceWorker.register() function)
-    registration.active
 
     if (registration) { // if there is a SW active
       registration.addEventListener('updatefound', () => {

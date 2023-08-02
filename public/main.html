@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="/main.css" />
     <link rel="stylesheet" href="/toolbar/assets/index.css" />
     <script src="/toolbar/assets/index.js" defer></script>
+    <script src="/uv/uv.bundle.js" defer></script>
     <script src="/uv/uv.config.js" defer></script>
-    <script src="/register-sw.js" defer></script>
     <script src="/search.js" defer></script>
 </head>
 <body>
-    <div id="app"></div>
+    <input
+        id="uv-search-engine"
+        value="https://www.google.com/search?q=%s"
+        type="hidden"
+    />
     <div>
-        <iframe>
+        <iframe class="uv-iframe">
     </div>
 </body>
 </html>
