@@ -14,14 +14,14 @@ self.__uv$config = {
   /*metrics*/
 };
 
-if (navigator) {
+if (navigator && navigator.serviceWorker) {
 
   (async function () {
     let refreshing = false;
 
     const swr = navigator.serviceWorker
     // detect controller change and refresh the page
-    swr && swr.addEventListener('controllerchange', () => {
+    swr.addEventListener('controllerchange', () => {
       if (!refreshing) {
         window.location.reload()
         refreshing = true
