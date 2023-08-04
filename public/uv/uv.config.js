@@ -1,6 +1,7 @@
 // This file overwrites the stock UV config.js
 self.__uv$config = {
   prefix: "/uv/service/",
+  mainPrefix: "/nml/",
   bare: "/bare/",
   encodeUrl: Ultraviolet.codec.xor.encode,
   decodeUrl: Ultraviolet.codec.xor.decode,
@@ -8,23 +9,19 @@ self.__uv$config = {
   client: "/uv/uv.client.js",
   bundle: "/uv/uv.bundle.js",
   config: "/uv/uv.config.js",
-  toolbar: {
-    script: "/toolbar/assets/index.js",
-    style: "/toolbar/assets/index.css",
-  },
   sw: "/uv/uv.sw.js",
   /*env*/
   /*metrics*/
 };
 
-if (navigator) {
+if (navigator && navigator.serviceWorker) {
 
   (async function () {
     let refreshing = false;
 
     const swr = navigator.serviceWorker
     // detect controller change and refresh the page
-    swr && swr.addEventListener('controllerchange', () => {
+    swr.addEventListener('controllerchange', () => {
       if (!refreshing) {
         window.location.reload()
         refreshing = true
@@ -33,7 +30,6 @@ if (navigator) {
 
     const registration = await navigator.serviceWorker.getRegistration();
     // (it is also returned from navigator.serviceWorker.register() function)
-    registration.active
 
     if (registration) { // if there is a SW active
       registration.addEventListener('updatefound', () => {
