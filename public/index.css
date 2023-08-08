@@ -52,7 +52,7 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
-#uv-register-sw {
+.btn {
   color: white;
   background: #555555;
   cursor: pointer;
@@ -61,11 +61,17 @@ body {
   border-radius: 6px;
   padding: 16px 20px;
   line-height: 16px;
-  display: none;
+  text-decoration: none;
+  display: inline-block;
+ 
 }
 
-#uv-register-sw:active {
+.btn:active {
   background: #333333;
+}
+
+#uv-register-sw {
+  display: none;
 }
 
 #uv-register-sw.show {
