@@ -32,5 +32,5 @@ form.addEventListener("submit", async (event) => {
   }
 
   const url = search(address.value, searchEngine.value);
-  location.href = __uv$config.mainPrefix + url;
+  location.href = __uv$config.mainPrefix + __uv$config.encodeUrl(url);
 });
