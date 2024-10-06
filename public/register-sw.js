@@ -24,8 +24,5 @@ async function registerSW() {
     throw new Error("Your browser doesn't support service workers.");
   }
 
-  // Ultraviolet has a stock `sw.js` script.
-  await navigator.serviceWorker.register(stockSW, {
-    scope: __uv$config.prefix,
-  });
+  await navigator.serviceWorker.register(stockSW);
 }
