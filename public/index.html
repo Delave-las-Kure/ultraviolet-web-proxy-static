@@ -23,6 +23,12 @@
     <meta name="googlebot" content="index, follow, snippet" />
     <link rel="shortcut icon" content="favicon.ico" />
     <link rel="stylesheet" href="index.css" />
+    <script>
+      if (!('SharedWorker' in globalThis)) {
+        globalThis.SharedWorker = undefined;
+        SharedWorker = undefined;
+      }
+    </script>
     <script src="baremux/index.js" defer></script>
     <script src="epoxy/index.js" defer></script>
     <script src="uv/uv.bundle.js" defer></script>
