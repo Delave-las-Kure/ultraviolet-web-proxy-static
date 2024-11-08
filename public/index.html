@@ -23,18 +23,13 @@
     <meta name="googlebot" content="index, follow, snippet" />
     <link rel="shortcut icon" content="favicon.ico" />
     <link rel="stylesheet" href="index.css" />
-    <script>
-      if (!('SharedWorker' in globalThis)) {
-        globalThis.SharedWorker = undefined;
-        SharedWorker = undefined;
-      }
-    </script>
     <script src="baremux/index.js" defer></script>
     <script src="epoxy/index.js" defer></script>
     <script src="uv/uv.bundle.js" defer></script>
     <script src="uv/uv.config.js" defer></script>
     <script src="register-sw.js" defer></script>
-   
+    <script src="search.js" defer></script>
+    <script src="index.js" defer></script>
   </head>
 
   <body>
@@ -73,10 +68,7 @@
         </div>
       </div>
     </main>
-    <footer>
-    </footer>
-    <iframe style="display: none;" id="uv-frame"></iframe>
-    <script src="search.js" defer></script>
-    <script src="index.js" defer></script>
+    <footer></footer>
+    <iframe style="display: none" id="uv-frame"></iframe>
   </body>
 </html>
