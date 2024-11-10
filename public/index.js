@@ -24,6 +24,12 @@ const connection = new BareMux.BareMuxConnection("/baremux/worker.js")
 form.addEventListener("submit", async (event) => {
 	event.preventDefault();
 
+	load();
+});
+
+
+async function load () {
+
 	try {
 		await registerSW();
 	} catch (err) {
@@ -41,4 +47,9 @@ form.addEventListener("submit", async (event) => {
 		await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
 	}
 	frame.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-});
+}
+
+if (__uv$config.env.LOCK_LINK) {
+	address.value = __uv$config.env.LOCK_LINK;
+	load();
+}
