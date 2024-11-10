@@ -52,4 +52,6 @@ async function load () {
 if (__uv$config.env.LOCK_LINK) {
 	address.value = __uv$config.env.LOCK_LINK;
 	load();
+} else {
+	form.style.display = null;
 }
